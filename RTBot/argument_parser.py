@@ -18,7 +18,7 @@ class Parser:
             help='run command and arguments'
         )
     
-    def declare_args(self):
+    def __declare_args(self):
         # Declaring Arguments
         self.info_parser.add_argument(
             '-v',
@@ -50,7 +50,7 @@ class Parser:
         )
 
     def parse(self):
-        self.declare_args()
+        self.__declare_args()
         if len(sys.argv) == 1:
             self.parser.parse_args(['--help'])
         else:
