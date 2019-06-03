@@ -1,9 +1,12 @@
 import argparse
 import sys
 
+from  RTBot import configurator
+
 # Parser:<Class>: Command Line Argument Parser
 class Parser:
     def __init__(self):
+        self.configurator = configurator.Configurator()
         self.parser = argparse.ArgumentParser(add_help=True)
         self.subparser = self.parser.add_subparsers(
             title='subcommands',
@@ -17,6 +20,10 @@ class Parser:
             'run-bot',
             help='run command and arguments'
         )
+
+        self.info_parser.set_defaults(func=self.configurator.info_processor)
+        self.run_parser.set_defaults(func=self.configurator.run_bot_processor)
+
     
     def __declare_args(self):
         # Declaring Arguments
@@ -54,4 +61,5 @@ class Parser:
         if len(sys.argv) == 1:
             self.parser.parse_args(['--help'])
         else:
-            self.parser.parse_args()
+            args = self.parser.parse_args()
+            args.func(args, self.parser.parse_args)
