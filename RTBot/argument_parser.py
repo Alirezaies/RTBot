@@ -1,4 +1,5 @@
 import argparse
+import sys
 
 # Parser:<Class>: Command Line Argument Parser
 class Parser:
@@ -49,4 +50,8 @@ class Parser:
         )
 
     def parse(self):
-        self.parser.parse_args()
+        self.declare_args()
+        if len(sys.argv) == 1:
+            self.parser.parse_args(['--help'])
+        else:
+            self.parser.parse_args()

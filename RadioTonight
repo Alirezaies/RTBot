@@ -4,5 +4,4 @@ from RTBot import argument_parser
 
 parser = argument_parser.Parser()
 
-parser.declare_args()
 parser.parse()
