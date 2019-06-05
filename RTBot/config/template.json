@@ -1,0 +1,12 @@
+{
+    "music":{
+
+        "deploy_message": [
+            "`Radio Tonight` By `Sadegh`",
+            "Song #{}:",
+            "\t`{}` By `{}`"
+        ]
+        
+    }
+
+}
