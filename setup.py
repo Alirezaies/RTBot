@@ -10,8 +10,6 @@ if os_type != 'Linux':
 with open('README.md', 'r') as fh:
     long_desc = fh.read()
 
-
-
 setuptools.setup(
     name='RTBot',
     version='0.0.0',

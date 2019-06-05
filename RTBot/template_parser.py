@@ -4,6 +4,7 @@ import os
 
 class template_parser:
     def __init__(self) -> None:
+        """ template_parser class: used to parse and proccess the messages """
         template = (os.path.dirname(
             os.path.realpath(__file__)), 'template.json')
         template = '/config/'.join(template)

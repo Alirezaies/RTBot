@@ -1,11 +1,13 @@
 import argparse
 import sys
 
-from  RTBot import configurator
+from RTBot import configurator
 
-# Parser:<Class>: Command Line Argument Parser
+
 class Parser:
-    def __init__(self):
+    def __init__(self) -> None:
+        """ Parser Class: used to parse the command line argument """
+
         self.configurator = configurator.Configurator()
         self.parser = argparse.ArgumentParser(add_help=True)
         self.subparser = self.parser.add_subparsers(
@@ -24,8 +26,7 @@ class Parser:
         self.info_parser.set_defaults(func=self.configurator.info_processor)
         self.run_parser.set_defaults(func=self.configurator.run_bot_processor)
 
-    
-    def __declare_args(self):
+    def __declare_args(self) -> None:
         # Declaring Arguments
         self.info_parser.add_argument(
             '-v',
@@ -56,7 +57,7 @@ class Parser:
             required=True
         )
 
-    def parse(self):
+    def parse(self) -> None:
         self.__declare_args()
         if len(sys.argv) == 1:
             self.parser.parse_args(['--help'])
