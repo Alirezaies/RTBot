@@ -29,6 +29,7 @@ setuptools.setup(
 
     ],
     install_requires=[
-        'python-telegram-bot>11'
+        'python-telegram-bot>=11,<12',
+        'SQLAlchemy>=1.3.4'
     ]
 )
