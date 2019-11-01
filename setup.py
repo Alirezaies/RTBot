@@ -24,6 +24,7 @@ setuptools.setup(
     install_requires=[
         'python-telegram-bot>=11,<12',
         'ujson==1.35',
-        'tinydb==3.13.0'
+        'tinydb==3.13.0',
+        'python-twitter==3.5'
     ]
 )
